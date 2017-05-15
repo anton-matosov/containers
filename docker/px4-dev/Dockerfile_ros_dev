@@ -1,0 +1,17 @@
+#
+# PX4 ROS development environment
+#
+
+FROM antonmatosov/px4-dev-ros
+MAINTAINER Anton Matosov <anton.matosov@gmail.com>
+
+RUN apt-get update
+RUN apt-get -y --quiet --no-install-recommends install \
+	ros-kinetic-desktop-full
+
+RUN apt-get -y autoremove
+RUN apt-get clean autoclean
+RUN rm -rf /var/lib/apt/lists/{apt,dpkg,cache,log} /tmp/* /var/tmp/*
+RUN rm -rf /etc/ros/rosdep/sources.list.d/20-default.list
+
+RUN rosdep init && rosdep update

@@ -35,7 +35,8 @@ docker run -it --privileged \
 docker build -t px4io/px4-dev-base -f Dockerfile_base .
 docker build -t px4io/px4-dev-nuttx -f Dockerfile_nuttx .
 docker build -t px4io/px4-dev-raspi -f Dockerfile_raspi .
-docker build -t px4io/px4-dev-simulation -f Dockerfile_simulation .
-docker build -t px4io/px4-dev-ros -f Dockerfile_ros .
+docker build -t antonmatosov/px4-dev-simulation -f Dockerfile_simulation .
+docker build -t antonmatosov/px4-dev-ros -f Dockerfile_ros .
+docker build -t antonmatosov/px4-dev-ros-dev -f Dockerfile_ros_dev .
 
 ```
